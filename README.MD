@@ -115,9 +115,18 @@ Under `./builds` you will find some sample builds.
 `./builds/BUILD-jumpbox.sh`
 ``` bash
 #!/bin/bash
-sudo bash ..build_kvm.bash \
+sudo bash ../build_vm.bash \
     --name Jumper \
     -W \
     --size BB \
     --network enp37s0.br16
 ```
+
+## Remove VMs
+Included with this repo is a simple script to remove any created VMs.
+
+``` bash
+sudo bash remove_vm.sh Jumper 
+```
+
+This deletes both the XML config in KVM, and the vdisks used by the VM. Use with care.

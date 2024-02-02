@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-sudo bash ..build_kvm.bash \
+sudo bash ../build_vm.bash \
     --name Jumper \
     -W \
     --size BB \
