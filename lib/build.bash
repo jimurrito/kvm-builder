@@ -47,7 +47,7 @@ build_new_lnx() {
         --cdrom "$LNXISO_DIR" \
         --graphics vnc,listen=0.0.0.0 \
         --network bridge="$NETWORK",model=virtio \
-        --os-variant Linux \
+        --os-variant generic \
         --accelerate \
         -v \
         --boot uefi \
