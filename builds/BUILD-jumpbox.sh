@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-bash ..kvm_builder.bash \
+sudo bash ..build_kvm.bash \
     --name Jumper \
-    --type win \
+    -W \
     --size BB \
-    --network enp45s0f0.br16
+    --network enp37s0.br16

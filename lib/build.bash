@@ -12,7 +12,7 @@ build_new_win() {
     WINISO_DIR=$7
     WINVIRTISO_DIR=$8
     #
-    virt-install \
+    sudo virt-install \
         --name="$NAME" \
         --vcpus="$CORES" \
         --ram=$RAM \
@@ -39,7 +39,7 @@ build_new_lnx() {
     DISK_DIR=$6
     LNXISO_DIR=$7
     #
-    virt-install \
+    sudo virt-install \
         --name="$NAME" \
         --vcpus="$CORES" \
         --ram=$RAM \

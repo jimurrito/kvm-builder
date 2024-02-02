@@ -4,10 +4,13 @@
 # Help Menu
 HELPMENU='KVM Builder - Help Menu
     -n --name     Name of the VM - Req.
-    -t --type     Type of OS [win,lin] - Req.
-    -o --ospath   Path to ISO used by the VM
-    -N --network  Network for the VM
-    -z --size     Pre-defined Size of the VM - Req. if not using Custom.
+    -L --linux    VM will be Linux based (Default)
+    -W --windows  VM will be Windows based.
+    -d --diskpath Path to where the VMs OS disk will go. - Req.
+    -o --iospath  Path to ISO used by the VM
+    -O --virtpath Path to the ISO containing QEMU drivers. (Windows Only)
+    -n --network  Network for the VM
+    -z --size     Pre-defined Size of the VM (Default Size: AA - 1 Core, 2GB Ram)
                       For the size menu, use "-h size"
     -h --help     This menu
 
@@ -41,54 +44,3 @@ SIZEMENU='KVM Builder - Pre-made sizes menu
 
 '
 
-# Size Selector
-size_find() {
-    #
-    case ${1,,} in
-        # A
-        "a")
-            OUT=(1 1)     
-        ;;
-        # AA
-        "aa")
-            OUT=(1 2)   
-        ;;
-        # B
-        "b")
-            OUT=(2 2)  
-        ;;
-        # BB
-        "bb")
-            OUT=(2 4)   
-        ;;
-        # C
-        "c")
-            OUT=(4 2)
-        ;;
-        # CC
-        "cc")
-            OUT=(4 4)
-        ;;
-        # D
-        "d")
-            OUT=(4 6) 
-        ;;
-        # DD
-        "dd")
-            OUT=(4 8)
-        ;;
-        # E
-        "e")
-            OUT=(6 4)
-        ;;
-        # EE
-        "ee")
-            OUT=(6 8) 
-        ;;
-        # Catch-all
-        *)
-            OUT=false
-    esac
-    #
-    echo "${OUT[@]}"
-}
